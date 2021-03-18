@@ -21,6 +21,26 @@
             <Setter Property="Foreground" Value="#FF212121"/>
             <Setter Property="SelectionBrush" Value="#FFE57373"/>
         </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontFamily" Value="Roboto"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Background" Value="#FFFF5252"/>
+            <Setter Property="Foreground" Value="#FFFFEBEE"/>
+        </Style>
+        
+        <ControlTemplate x:Key="ButtonTemplate1" TargetType="{x:Type ButtonBase}">
+            <Border x:Name="border" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" SnapsToDevicePixels="true">
+                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+            </Border>
+            
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="Background" TargetName="border" Value="#FFF44336"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
     </Window.Resources>
     
     <StackPanel Margin="20">
@@ -62,6 +82,16 @@
 
             <TextBlock Text="Target Savings"/>
             <TextBox Grid.Column="1"/>
+        </Grid>
+
+        <Grid Margin="0,15,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="CalcButt" Template="{DynamicResource ButtonTemplate1}" Content="Calculate" Margin="0,0,8,0" Click="CalcButt_Click"/>
+            <Button x:Name="ExitButt" Template="{DynamicResource ButtonTemplate1}" Content="Exit" Grid.Column="1" Margin="8,0,0,0" Click="ExitButt_Click"/>
         </Grid>
     </StackPanel>
 </Window>

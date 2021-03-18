@@ -17,9 +17,16 @@ namespace Saving_Plan
 {
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow() => InitializeComponent();
+
+        private void CalcButt_Click(object sender, RoutedEventArgs e)
         {
-            InitializeComponent();
+
+        }
+
+        private void ExitButt_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
