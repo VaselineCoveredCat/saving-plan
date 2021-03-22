@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Saving_Plan"
         mc:Ignorable="d"
-        Title="Saving Plan" Height="300" Width="600" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Background="#FFFFEBEE" Foreground="#FF212121">
+        Title="Saving Plan" Height="390" Width="580" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Background="#FFFFEBEE" Foreground="#FF212121">
     
     <Window.Resources>
         <Style TargetType="TextBlock">
@@ -51,7 +51,7 @@
             </Grid.ColumnDefinitions>
             
             <TextBlock Text="Salary"/>
-            <TextBox Grid.Column="1"/>
+            <TextBox Grid.Column="1" ToolTip="Income per month"/>
         </Grid>
         
         <Grid Margin="0,15,0,0">
@@ -71,7 +71,7 @@
             </Grid.ColumnDefinitions>
 
             <TextBlock Text="Bonus Savings"/>
-            <TextBox Grid.Column="1" ToolTip="Optional"/>
+            <TextBox Grid.Column="1" ToolTip="Optional, bonus per month"/>
         </Grid>
 
         <Grid Margin="0,15,0,0">
@@ -92,6 +92,14 @@
 
             <Button x:Name="CalcButt" Template="{DynamicResource ButtonTemplate1}" Content="Calculate" Margin="0,0,8,0" Click="CalcButt_Click"/>
             <Button x:Name="ExitButt" Template="{DynamicResource ButtonTemplate1}" Content="Exit" Grid.Column="1" Margin="8,0,0,0" Click="ExitButt_Click"/>
+        </Grid>
+
+        <Grid Margin="0,15,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock x:Name="Result" Text="100%" HorizontalAlignment="Center" FontFamily="Montserrat Black" FontSize="80" Foreground="#FFEF9A9A"/>
         </Grid>
     </StackPanel>
 </Window>
