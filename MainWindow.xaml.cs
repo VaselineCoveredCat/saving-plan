@@ -21,12 +21,9 @@ namespace Saving_Plan
 
         private void CalcButt_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
-        private void ExitButt_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+        private void ExitButt_Click(object sender, RoutedEventArgs e) => Close();
     }
 }
