@@ -21,7 +21,30 @@ namespace Saving_Plan
 
         private void CalcButt_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (int.TryParse(SalaryTextBox.Text, out int salary) && float.TryParse(SavingTextBox.Text, out float savingPercentage) && int.TryParse(TargetTextBox.Text, out int targetSaving))
+            {
+                int moneySaved = 0;
+                int months = 0;
+
+                savingPercentage /= 100;
+                salary = Convert.ToInt32(salary * savingPercentage);
+
+                while (moneySaved < targetSaving)
+                {
+                    moneySaved += salary;
+                    months++;
+                }
+
+                if (months > 12)
+                {
+                    Result.Text = $"{Math.Round((float)months / 12, 1)} years";
+                }
+
+                else
+                {
+                    Result.Text = $"{months} months";
+                }
+            }
         }
 
         private void ExitButt_Click(object sender, RoutedEventArgs e) => Close();
