@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Saving_Plan"
         mc:Ignorable="d"
-        Title="Saving Plan" Height="390" Width="580" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Background="#FFFFEBEE" Foreground="#FF212121">
+        Title="Saving Plan" MinWidth="580" SizeToContent="WidthAndHeight" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Background="#FFFFEBEE" Foreground="#FF212121">
     
     <Window.Resources>
         <Style TargetType="TextBlock">
@@ -51,7 +51,7 @@
             </Grid.ColumnDefinitions>
             
             <TextBlock Text="Salary"/>
-            <TextBox Grid.Column="1" ToolTip="Income per month"/>
+            <TextBox x:Name="SalaryTextBox" Grid.Column="1" ToolTip="Income per month"/>
         </Grid>
         
         <Grid Margin="0,15,0,0">
@@ -61,7 +61,7 @@
             </Grid.ColumnDefinitions>
 
             <TextBlock Text="Saving Percentage"/>
-            <TextBox Grid.Column="1" ToolTip="Without percent sign"/>
+            <TextBox x:Name="SavingTextBox" Grid.Column="1" ToolTip="Without percent sign"/>
         </Grid>
 
         <Grid Margin="0,15,0,0">
@@ -81,7 +81,7 @@
             </Grid.ColumnDefinitions>
 
             <TextBlock Text="Target Savings"/>
-            <TextBox Grid.Column="1"/>
+            <TextBox x:Name="TargetTextBox" Grid.Column="1"/>
         </Grid>
 
         <Grid Margin="0,15,0,0">
